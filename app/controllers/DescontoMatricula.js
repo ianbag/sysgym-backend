@@ -2,8 +2,9 @@ const { DescontoMatriculaModel} = require('../models')
 class DescontoMatricula{
     get(req,res){
         DescontoMatriculaModel.findAll({
-            raw:true,
-            where:{isDeleted:1}
+            where:{
+                isDeleted:1
+            }
         })
             .then(DescontoMatricula=>res.json(DescontoMatricula))
             .catch(error=> res.json(error))
