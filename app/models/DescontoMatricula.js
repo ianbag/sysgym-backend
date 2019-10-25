@@ -1,14 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
     const DescontoMatriculaModel = sequelize.define('DescontoMatricula', {
        id_desconto_matricula:{
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             required: true,
-            autoIncrement: true,
+           // autoIncrement: true,
             allowNull: false
        },
         nome:{
             type: DataTypes.STRING,
             required:true,
+            autoIncrement: false,
             max: 80
         },
         descricao:{
@@ -19,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         isDeleted:{
             type: DataTypes.TINYINT,
             max:1,
+            autoIncrement: false,
             allowNull: false,
             defaultValue:1,
         }

@@ -2,6 +2,7 @@ const { DescontoMatriculaModel} = require('../models')
 class DescontoMatricula{
     get(req,res){
         DescontoMatriculaModel.findAll({
+            raw: true, 
             where:{
                 isDeleted:1
             }
