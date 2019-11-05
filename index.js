@@ -5,6 +5,7 @@ const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 
 app.use(cors())
+const DescontoMatriculaRoute= require('./app/routes/descontomatricula');
 
 /*
     CONFIG bodyParser
@@ -18,6 +19,9 @@ app.use(bodyParser.json({ type: 'application/json' }))
 app.get('/', (req, res) => {
     res.send({ message: 'CRUD API NodeJS' })
 });
+
+//API DescontoMatricula
+app.use('/', DescontoMatriculaRoute)
 
 app.use('*', (req, res) => res.send({ message: 'API não encontrada' }))
 
